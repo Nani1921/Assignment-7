@@ -1,0 +1,12 @@
+extends layouts/layout
+
+block content
+  h1 Checkout
+  form(action='/orders' method='POST')
+    label Address:
+    input(type='text' name='shippingAddress' required)
+    label Payment Method:
+    select(name='paymentMethod' required)
+      option Credit Card
+      option PayPal
+    button(type='submit') Place Order

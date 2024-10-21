@@ -1,0 +1,10 @@
+extends layouts/layout
+
+block content
+  h1= product.name
+  img(src=product.image alt=product.name)
+  p= product.description
+  p Price: $#{product.price}
+  form(action='/cart/add' method='POST')
+    input(type='hidden' name='product_id' value=product._id)
+    button(type='submit') Add to Cart

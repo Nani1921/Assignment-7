@@ -1,0 +1,15 @@
+extends layouts/layout
+
+block content
+  h1 Products
+
+  if products && products.length > 0
+    ul.products
+      each product in products
+        li
+          a(href=`/products/${product._id}`)
+            img(src=product.image alt=product.name)
+            h2= product.name
+            p= `$${product.price}`
+  else
+    p No products available at the moment.
